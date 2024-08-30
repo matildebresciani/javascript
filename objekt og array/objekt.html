@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objekt</title>
+    <style>
+      img {
+        width: 300px;
+      }
+      article {
+        border: 1px solid;
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Albums</h1>
+    <template>
+      <article id="albumkort">
+        <img src="" alt="coverbillede" />
+        <h2>albumnavn</h2>
+        <h3>kunstner</h3>
+        <p>årstal</p>
+        <div>trackliste</div>
+      </article>
+    </template>
+    <section id="albumliste"></section>
+    <script>
+  
