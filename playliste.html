@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playliste</title>
+  </head>
+  <body>
+    <main>
+      <h1>Playliste</h1>
+      <ul id="playliste"></ul>
+    </main>
+
+    <script>
+      const liste = document.querySelector("ul");
+
+      const sange = [
+        "505",
+        "Do I Wanna Know?",
+        "Knee Socks",
+        "I Wanna Be Yours",
+        "Why'd You Only Call Me When You're High?",
+        "Brick By Brick",
+        "This House Is A Circus",
+        "Electricity",
+        "Red Lights Indicates Doors Are Secure",
+        "R U Mine?",
+      ];
+
+      sange.forEach(putListe);
+
+      function putListe(musik) {
+        console.log(musik);
+        liste.innerHTML += "<li>" + musik + "</li>";
+      }
+    </script>
+  </body>
+</html>

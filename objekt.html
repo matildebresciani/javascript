@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objekt</title>
+    <style>
+      img {
+        width: 300px;
+      }
+      article {
+        border: 1px solid;
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Albums</h1>
+    <template>
+      <article id="albumkort">
+        <img src="" alt="coverbillede" />
+        <h2>albumnavn</h2>
+        <h3>kunstner</h3>
+        <p>årstal</p>
+        <div>trackliste</div>
+      </article>
+    </template>
+    <section id="albumliste"></section>
+    <script>
+      const albums = [
+        {
+          albumnavn: "AM",
+          kunstner: "Arctic Monkeys",
+          årstal: "2013",
+          trackliste: [
+            "Do I Wanna Know?",
+            "R U Mine?",
+            "One For The Road",
+            "Arabella",
+            "I Want It All",
+            "No. 1 Party Anthem",
+            "Mad Sounds",
+            "Fireside",
+            "Why'd You Only Call Me When You're High",
+            "Snap Out Of It",
+            "Knee Socks",
+            "I Wanna Be Yours",
+          ],
+          billede: "arcticmonkeys.jpg",
+        },
+        {
+          albumnavn: "Favorite Worst Nightmare",
+          kunstner: "Arctic Monkeys",
+          årstal: "2007",
+          trackliste: [
+            "Brianstorm",
+            "Teddy Picker",
+            "D is for Dangerous",
+            "Balaclava",
+            "Fluorescent Adolescent",
+            "Only Ones Who Know",
+            "Do Me a Favour",
+            "This House is a Circus",
+            "If You Were There, Beware",
+            "The Bad Thing",
+            "Old Yellow Bricks",
+            "505",
+          ],
+          billede: "fwn.jpg",
+        },
+        {
+          albumnavn: "Suck It And See",
+          kunstner: "Arctic Monkeys",
+          årstal: "2011",
+          trackliste: [
+            "She's Thunderstorms",
+            "Black Treacle",
+            "Brick By Brick",
+            "The Hellcat Spangled Shalalala",
+            "Don't Sit Down 'Cause I've Moved Your Chair",
+            "Library Pictures",
+            "All My Own Stunts",
+            "Reckless Serenade",
+            "Piledriver Waltz",
+            "Love is a Laserquest",
+            "Suck It and See",
+            "That's Where You're Wrong",
+          ],
+          billede: "suckitandsee.jpg",
+        },
+      ];
+
+      const skabelon = document.querySelector("template").content;
+      console.log(skabelon);
+
+      const albumListe = document.querySelector("#albumliste");
+
+      albums.forEach(visAlbum);
+
+      function visAlbum(albums) {
+        console.log(albums);
+        const kopi = skabelon.cloneNode(true);
+
+        kopi.querySelector("img").src = "img/" + albums.billede;
+        kopi.querySelector("h2").textContent = albums.albumnavn;
+        kopi.querySelector("h3").textContent = albums.kunstner;
+        kopi.querySelector("p").textContent = albums.årstal;
+        kopi.querySelector("div").textContent = albums.trackliste;
+
+        albumListe.appendChild(kopi);
+      }
+    </script>
+  </body>
+</html>
